@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Ranchers');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
 html,
 body {
   margin: 0;
@@ -37,10 +40,9 @@ body {
 
 .score-wrapper {
   position: absolute;
-  bottom: 159px;
+  bottom: 38%;
   left: 50%;
   margin-left: -40px;
-  /*text-transform: uppercase;*/
   z-index: 3;
   font-family: 'Indie Flower';
   color: black;
@@ -53,7 +55,7 @@ body {
   max-width: 240px;
   margin: auto;
   text-align: center;
-  font-family: 'Ranchers';
+  font-family: 'Ranchers', cursive;
   padding: .8rem 1rem;
   display: block;
   border-radius: 15px;
@@ -86,7 +88,7 @@ body {
 #gift h1 {
   margin-top: 5rem;
   text-transform: uppercase;
-  font-family: 'Ranchers';
+  font-family: 'Ranchers', cursive;
   color: white;
 }
 
@@ -105,7 +107,7 @@ body {
   color: #fba22e;
   top: 0;
   right: 0;
-  font-family: 'Ranchers';
+  font-family: 'Ranchers', cursive;
 }
 
 .animate {
