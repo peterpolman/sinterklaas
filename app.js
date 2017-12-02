@@ -22,6 +22,9 @@ App = {
   },
 
   startGame: function() {
+    var start = document.getElementById('start');
+    start.classList.add('hide');
+
     // Render players
     App.players[0] = this.createPlayer();
     App.canvas.appendChild(App.players[0]);
@@ -231,11 +234,5 @@ App = {
 }
 
 window.onload = function() {
-  var start = document.getElementById('start');
-
-  start.querySelector('.button').addEventListener('click', function() {
-    start.classList.add('hide');
-    App.init();
-  });
-
+  App.init();
 }
