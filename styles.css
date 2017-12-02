@@ -73,6 +73,7 @@ body {
   background: linear-gradient(#ffe400, #ffc600);
 }
 
+#start,
 #gift {
   position: absolute;
   width: 100%;
@@ -86,6 +87,7 @@ body {
   padding: 3rem 2rem;
 }
 
+#start h1,
 #gift h1 {
   text-transform: uppercase;
   font-family: 'Ranchers', cursive;
@@ -93,12 +95,19 @@ body {
   letter-spacing: 1px;
 }
 
+#start p,
 #gift p {
   font-size: 1.2rem;
   font-family: 'Indie Flower';
   color: white;
 }
 
+#start.show.hide,
+#gift.hide {
+  top: -100%;
+}
+
+#start.show,
 #gift.show {
   top: 0;
 }

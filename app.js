@@ -9,6 +9,7 @@ App = {
   score: 0,
   endGame: 9,
   timers: [],
+  state: 'INIT',
 
   // Initialize UI and configure player
   init: function() {
@@ -18,7 +19,9 @@ App = {
 
     // Bind events to elements in UI and keyboard
     this.bindEvents();
+  },
 
+  startGame: function() {
     // Render players
     App.players[0] = this.createPlayer();
     App.canvas.appendChild(App.players[0]);
@@ -87,13 +90,11 @@ App = {
 
     // If the objects value is positive (coin) up the speed
     if ( Math.sign(object.value) == 1 ) {
-      console.log('coin');
       App.speed = App.speed + .5;
     }
 
     // If the objects value is negative (snack) down the speed if it is bigger than 1
     else if (App.speed > 1 ) {
-      console.log('snack');
       App.speed = App.speed - .5;
     }
 
@@ -203,6 +204,7 @@ App = {
 
   handleOrientation: function (event) {
     var x = event.beta;  // In degree in the range [-180,180]
+    var y = event.gamma;  // In degree in the range [-90,90]
 
     // Because we don't want to have the device upside down
     // We constrain the x value to the range [-90,90]
@@ -212,14 +214,28 @@ App = {
     // To make computation easier we shift the range of
     // x and y to [0,180]
     x += 90;
+    y += 90;
 
-    // 10 is half the size of the ball
-    // It center the positioning point to the center of the ball
-    App.players[0].style.left = App.players[0].x = (App.uiWidth * x / 180 - 25);
+    if (y > 45 && App.state == 'INIT') {
+      console.log('START GAME!');
+      App.state = 'STARTED';
+      App.startGame();
+    }
+
+    if (App.state == 'STARTED') {
+      // 10 is half the size of the ball
+      // It center the positioning point to the center of the ball
+      App.players[0].style.left = App.players[0].x = (App.uiWidth * x / 180 - 25);
+    }
   }
-
 }
 
 window.onload = function() {
-  App.init();
+  var start = document.getElementById('start');
+
+  start.querySelector('.button').addEventListener('click', function() {
+    start.classList.add('hide');
+    App.init();
+  });
+
 }
