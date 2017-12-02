@@ -79,6 +79,7 @@ body {
   transition: .5s top ease;
   display: flex;
   text-align: center;
+  padding: 4rem 2rem;
 }
 
 #gift > div {
@@ -86,7 +87,6 @@ body {
 }
 
 #gift h1 {
-  margin-top: 5rem;
   text-transform: uppercase;
   font-family: 'Ranchers', cursive;
   color: white;
