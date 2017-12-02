@@ -78,13 +78,13 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #2b4f60;
+  background: radial-gradient(#2b4f60,#122b37);
   z-index: 10;
   top: -100%;
   transition: .5s top ease;
   display: block;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
 }
 
 #start h1,
@@ -92,14 +92,17 @@ body {
   text-transform: uppercase;
   font-family: 'Ranchers', cursive;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3)
 }
 
 #start p,
 #gift p {
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   font-family: 'Indie Flower';
   color: white;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3)
 }
 
 #start.show.hide,
