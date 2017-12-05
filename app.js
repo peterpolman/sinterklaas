@@ -23,7 +23,6 @@ App = {
 
     // Enable no sleep to prevent display sleeps
     this.noSleep.enable();
-    debugger
   },
 
   startGame: function() {
