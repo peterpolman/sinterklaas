@@ -223,7 +223,7 @@ App = {
     x += 90;
     y += 90;
 
-    if (y > 45 && App.state == 'INIT') {
+    if (y > 60 && App.state == 'INIT') {
       console.log('START GAME!');
       App.state = 'STARTED';
       App.startGame();
